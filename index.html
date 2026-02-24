@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALMAJO - Tienda de Moda | Venta y Alquiler</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+    --font-size: 16px;
+    --background: #FFF5F7;
+    --foreground: #5C4742;
+    --card: #ffffff;
+    --card-foreground: #5C4742;
+    --popover: #ffffff;
+    --popover-foreground: #5C4742;
+    --primary: #E6A4B4;
+    --primary-foreground: #5C4742;
+    --secondary: #F8E8D8;
+    --secondary-foreground: #5C4742;
+    --muted: #F9E5E9;
+    --muted-foreground: #9B8B87;
+    --accent: #F5D0C5;
+    --accent-foreground: #5C4742;
+    --destructive: #d4183d;
+    --destructive-foreground: #ffffff;
+    --border: rgba(230, 164, 180, 0.2);
+    --input: transparent;
+    --input-background: #FFF9F5;
+    --switch-background: #E6A4B4;
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+    --ring: #E6A4B4;
+    --chart-1: #E6A4B4;
+    --chart-2: #F5D0C5;
+    --chart-3: #F8E8D8;
+    --chart-4: #FFD4E5;
+    --chart-5: #FFC4D6;
+    --radius: 0.75rem;
+    --sidebar: #FFF9F5;
+    --sidebar-foreground: #5C4742;
+    --sidebar-primary: #E6A4B4;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #F9E5E9;
+    --sidebar-accent-foreground: #5C4742;
+    --sidebar-border: rgba(230, 164, 180, 0.2);
+    --sidebar-ring: #E6A4B4;
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.145 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.145 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --border: oklch(0.269 0 0);
+    --input: oklch(0.269 0 0);
+    --ring: oklch(0.439 0 0);
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(0.269 0 0);
+    --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-input-background: var(--input-background);
+    --color-switch-background: var(--switch-background);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+    * {
+        box-shadow: none;
+    }
+
+    body {
+        background: var(--color-background);
+        color: var(--color-foreground);
+    }
+
+    html {
+        font-size: var(--font-size);
+    }
+
+    h1 { font-weight: var(--font-weight-medium); }
+    h2 { font-weight: var(--font-weight-medium); }
+    h3 { font-weight: var(--font-weight-medium); }
+    h4 { font-weight: var(--font-weight-medium); }
+    label { font-weight: var(--font-weight-medium); }
+    button { font-weight: var(--font-weight-medium); }
+    input { font-weight: var(--font-weight-normal); }
+}
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            background: var(--light);
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 249, 245, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(230, 164, 180, 0.15);
+            animation: slideDown 0.6s ease-out;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.05); }
+            50% { transform: scale(1); }
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #F5D0C5 0%, #FFD4E5 50%, #F8E8D8 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(230, 164, 180, 0.15) 0%, transparent 70%);
+            animation: rotate 25s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+            opacity: 0.3;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-40px) translateX(30px); }
+        }
+
+        /* ==================== BENEFICIOS ==================== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(245, 208, 197, 0.6) 0%, rgba(255, 212, 229, 0.6) 100%);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(230, 164, 180, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            background: linear-gradient(135deg, rgba(248, 232, 216, 0.7) 0%, rgba(255, 212, 229, 0.7) 100%);
+            box-shadow: 0 20px 50px rgba(230, 164, 180, 0.25);
+            border-color: var(--primary);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .benefit-card h3 {
+            color: var(--dark);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-card p {
+            color: #9B8B87;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #E6A4B4 0%, #D4859D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            letter-spacing: 4px;
+            font-weight: 900;
+            animation: titleGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(230, 164, 180, 0.3)); }
+            50% { filter: drop-shadow(0 0 20px rgba(212, 133, 157, 0.5)); }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            box-shadow: 0 8px 25px rgba(230, 164, 180, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(230, 164, 180, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--dark);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(230, 164, 180, 0.3);
+        }
+
+        /* ==================== SECCIONES PRINCIPALES ==================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleSlideIn 0.8s ease-out;
+        }
+
+        @keyframes titleSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary), var(--secondary));
+            border-radius: 2px;
+            animation: expandWidth 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 100px; }
+        }
+
+        /* ==================== CATEGORÍAS ==================== */
+        .categories {
+            background: linear-gradient(135deg, var(--light) 0%, #F9E5E9 100%);
+            padding: 5rem 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .category-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 32px rgba(230, 164, 180, 0.15);
+            animation: zoomIn 0.8s ease-out;
+            border: 2px solid rgba(230, 164, 180, 0.2);
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .category-card:hover::before {
+            left: 100%;
+        }
+
+        .category-card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 20px 50px rgba(230, 164, 180, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .category-card.venta {
+            border-top: 4px solid var(--primary);
+            background: linear-gradient(135deg, rgba(245, 208, 197, 0.6) 0%, rgba(255, 212, 229, 0.6) 100%);
+        }
+
+        .category-card.alquiler {
+            border-top: 4px solid var(--secondary);
+            background: linear-gradient(135deg, rgba(248, 232, 216, 0.6) 0%, rgba(245, 208, 197, 0.6) 100%);
+        }
+
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .category-card h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .category-card p {
+            color: #9B8B87;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ==================== PRODUCTOS ==================== */
+        .products {
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(230, 164, 180, 0.15);
+            transition: all 0.4s ease;
+            animation: fadeIn 0.8s ease-out;
+            border: 2px solid rgba(230, 164, 180, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card:hover {
+            transform: translateY(-20px) scale(1.05) rotate(1deg);
+            box-shadow: 0 20px 50px rgba(230, 164, 180, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #F5D0C5 0%, #FFD4E5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.15) 50%, transparent 70%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .product-price {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .product-button {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .product-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(230, 164, 180, 0.3);
+        }
+
+        /* ==================== CARACTERÍSTICAS ==================== */
+        .features {
+            background: linear-gradient(135deg, #FFF9F5 0%, #F9E5E9 50%, #FFE8EC 100%);
+            padding: 5rem 2rem;
+            color: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(230, 164, 180, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+            pointer-events: none;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 25px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(245, 208, 197, 0.3) 100%);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(230, 164, 180, 0.2);
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 32px rgba(230, 164, 180, 0.1);
+        }
+
+        .feature:hover {
+            transform: translateY(-15px) rotate(2deg);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 212, 229, 0.3) 100%);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(230, 164, 180, 0.25);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .feature h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            color: var(--dark);
+        }
+
+        .feature p {
+            color: #9B8B87;
+            font-size: 0.95rem;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #7B6B66 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-top: 3px solid var(--primary);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .categories-grid, .products-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==================== IMAGE WITH FALLBACK ==================== */
+        .image-fallback-container {
+            display: inline-block;
+            background: linear-gradient(135deg, #F9E5E9 0%, #F5D0C5 100%);
+            text-align: center;
+            vertical-align: middle;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            border: 2px solid rgba(230, 164, 180, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .image-fallback-container:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 25px rgba(230, 164, 180, 0.3);
+            transform: scale(1.02);
+        }
+
+        .image-fallback-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            padding: 1rem;
+        }
+
+        .image-fallback-error {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            color: var(--muted-foreground);
+        }
+
+        .image-fallback-error-icon {
+            width: 64px;
+            height: 64px;
+            opacity: 0.7;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .image-fallback-error-text {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #9B8B87;
+            text-align: center;
+        }
+
+        .image-fallback-error-url {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            opacity: 0.6;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        .image-fallback-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            background: linear-gradient(135deg, #F9E5E9 0%, #F5D0C5 100%);
+        }
+
+        .image-fallback-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(230, 164, 180, 0.3);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="logo">ALMAJO</div>
+            <ul class="nav-menu">
+                <li><a href="#venta">Venta</a></li>
+                <li><a href="#alquiler">Alquiler</a></li>
+                <li><a href="#caracteristicas">Características</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle dark mode" style="background:transparent;border:none;cursor:pointer;font-size:1.1rem;padding:0.5rem 0.75rem;border-radius:8px;">
+                🌙
+            </button>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <h1>ALMAJO</h1>
+            <p>Ropa Premium - Venta y Alquiler para Todas tus Ocasiones</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('venta').scrollIntoView({behavior: 'smooth'})">
+                    🛍️ Comprar Ahora
+                </button>
+                <button class="btn btn-secondary" onclick="document.getElementById('alquiler').scrollIntoView({behavior: 'smooth'})">
+                    👗 Ver Alquiler
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS PRINCIPALES -->
+    <section class="benefits" style="background: rgba(255, 255, 255, 0.9); padding: 4rem 2rem; backdrop-filter: blur(10px);">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>Sin Compromisos</h3>
+                    <p>Devuelve o cambia cuando quieras</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Super Rápido</h3>
+                    <p>Entrega en 24-48 horas</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⭐</div>
+                    <h3>Todo Incluido</h3>
+                    <p>Limpieza y mantenimiento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEPARADOR CURVO -->
+    <div style="height: 80px; background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(249,229,233,0.8) 100%); position: relative;">
+        <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; width: 100%;">
+            <path d="M0 64L60 69.3C120 75 240 85 360 80C480 75 600 53 720 48C840 43 960 53 1080 58.7C1200 64 1320 64 1380 69.3L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#FFF9F5"/>
+        </svg>
+    </div>
+
+    <!-- CATEGORÍAS -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="categories-grid">
+                <div class="category-card venta" id="venta">
+                    <div class="category-icon">🛍️</div>
+                    <h2>Venta</h2>
+                    <p>Descubre nuestra exclusiva colección de ropa premium para todas las ocasiones. Calidad garantizada y precios competitivos.</p>
+                    <button class="btn btn-primary">Explorar Venta</button>
+                </div>
+                <div class="category-card alquiler" id="alquiler">
+                    <div class="category-icon">👗</div>
+                    <h2>Alquiler</h2>
+                    <p>Alquila prendas elegantes para eventos especiales. Variedades infinitas sin comprometer tu presupuesto.</p>
+                    <button class="btn btn-primary">Explorar Alquiler</button>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">✨</div>
+                    <h2>Estilo</h2>
+                    <p>Asesoramiento personalizado de nuestros expertos en moda. Encuentra el look perfecto para tu personalidad.</p>
+                    <button class="btn btn-primary">Consultar Estilo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS VENTA -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Colección de Venta</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <image-with-fallback 
+                            src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400" 
+                            alt="Traje Ejecutivo"
+                            width="100%"
+                            height="250px"
+                            class="product-img"
+                        ></image-with-fallback>
+                    </div>
+                    <div class="product-info">
+                        <h3>Traje Ejecutivo</h3>
+                        <div class="product-price">$150.00</div>
+                        <button class="product-button">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <image-with-fallback 
+                            src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400" 
+                            alt="Vestido Elegante"
+                            width="100%"
+                            height="250px"
+                        ></image-with-fallback>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Elegante</h3>
+                        <div class="product-price">$120.00</div>
+                        <button class="product-button">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <image-with-fallback 
+                            src="invalid-image-url-test.jpg" 
+                            alt="Zapatos Premium"
+                            width="100%"
+                            height="250px"
+                        ></image-with-fallback>
+                    </div>
+                    <div class="product-info">
+                        <h3>Zapatos Premium</h3>
+                        <div class="product-price">$85.00</div>
+                        <button class="product-button">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <image-with-fallback 
+                            src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400" 
+                            alt="Chaqueta Premium"
+                            width="100%"
+                            height="250px"
+                        ></image-with-fallback>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chaqueta Premium</h3>
+                        <div class="product-price">$140.00</div>
+                        <button class="product-button">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">👖</div>
+                    <div class="product-info">
+                        <h3>Pantalón Premium</h3>
+                        <div class="product-price">$80.00</div>
+                        <button class="product-button">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">👜</div>
+                    <div class="product-info">
+                        <h3>Bolsa Exclusiva</h3>
+                        <div class="product-price">$110.00</div>
+                        <button class="product-button">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARACTERÍSTICAS -->
+    <section class="features" id="caracteristicas">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">¿Por qué elegir ALMAJO?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">💎</div>
+                    <h3>Calidad Premium</h3>
+                    <p>Solo prendas de alta calidad seleccionadas cuidadosamente para ti.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Precios Justos</h3>
+                    <p>El mejor price-quality ratio del mercado está en nuestras manos.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Envío Rápido</h3>
+                    <p>Entrega express a toda la zona en máximo 48 horas.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Cambios Gratis</h3>
+                    <p>No te gusta? Cámbialo sin costo dentro de 30 días.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👥</div>
+                    <h3>Atención Personal</h3>
+                    <p>Equipo de expertos listos para ayudarte en tu decisión.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Garantía 100%</h3>
+                    <p>Satisfacción garantizada o devolución total del dinero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="container">
+            <h3>ALMAJO - Tu Tienda de Moda</h3>
+            <p>📍 Dirección: Calle Principal 123, Ciudad</p>
+            <p>📱 Teléfono: +34 123 456 789</p>
+            <p>📧 Email: info@almajo.com</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Contacto</a>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+            <p style="margin-top: 2rem; color: #999; font-size: 0.9rem;">
+                © 2026 ALMAJO. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== IMAGE WITH FALLBACK COMPONENT ====================
+        const ERROR_IMG_SRC = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg==';
+
+        class ImageWithFallback extends HTMLElement {
+            constructor() {
+                super();
+                this._didError = false;
+                this._isLoading = true;
+            }
+
+            static get observedAttributes() {
+                return ['src', 'alt', 'width', 'height', 'class'];
+            }
+
+            connectedCallback() {
+                this.render();
+            }
+
+            attributeChangedCallback(name, oldValue, newValue) {
+                if (oldValue !== newValue) {
+                    this._didError = false;
+                    this._isLoading = true;
+                    this.render();
+                }
+            }
+
+            get src() {
+                return this.getAttribute('src') || '';
+            }
+
+            set src(value) {
+                this.setAttribute('src', value);
+            }
+
+            get alt() {
+                return this.getAttribute('alt') || '';
+            }
+
+            set alt(value) {
+                this.setAttribute('alt', value);
+            }
+
+            handleError = () => {
+                this._didError = true;
+                this._isLoading = false;
+                this.render();
+            }
+
+            handleLoad = () => {
+                this._isLoading = false;
+                this.render();
+            }
+
+            render() {
+                const width = this.getAttribute('width') || '100%';
+                const height = this.getAttribute('height') || 'auto';
+                const customClass = this.getAttribute('class') || '';
+                const style = this.getAttribute('style') || '';
+
+                this.style.display = 'inline-block';
+                this.style.width = width;
+                this.style.height = height;
+
+                if (this._isLoading && !this._didError) {
+                    this.innerHTML = `
+                        <div class="image-fallback-loading">
+                            <div class="image-fallback-spinner"></div>
+                        </div>
+                    `;
+                    
+                    // Create and load the actual image
+                    const img = new Image();
+                    img.onload = this.handleLoad;
+                    img.onerror = this.handleError;
+                    img.src = this.src;
+                    img.alt = this.alt;
+                    img.style.display = 'none';
+                    this.appendChild(img);
+                    return;
+                }
+
+                if (this._didError) {
+                    this.innerHTML = `
+                        <div class="image-fallback-container" style="${style}">
+                            <div class="image-fallback-wrapper">
+                                <div class="image-fallback-error">
+                                    <img 
+                                        src="${ERROR_IMG_SRC}" 
+                                        alt="Error loading image" 
+                                        class="image-fallback-error-icon"
+                                    >
+                                    <span class="image-fallback-error-text">Error al cargar imagen</span>
+                                    <span class="image-fallback-error-url" title="${this.src}">${this.src}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    this.setAttribute('data-original-url', this.src);
+                } else {
+                    // Image loaded successfully
+                    this.innerHTML = `
+                        <img 
+                            src="${this.src}" 
+                            alt="${this.alt}" 
+                            class="${customClass}"
+                            style="${style}; width: 100%; height: auto;"
+                        >
+                    `;
+                }
+            }
+        }
+
+        // Register the custom element
+        customElements.define('image-with-fallback', ImageWithFallback);
+
+        // Helper function to create image elements with fallback
+        function createImageWithFallback(src, alt, options = {}) {
+            const container = document.createElement('div');
+            container.className = options.className || '';
+            container.style.cssText = options.style || '';
+            
+            const img = new Image();
+            img.src = src;
+            img.alt = alt;
+            img.className = options.imgClass || '';
+            
+            if (options.onError) {
+                img.onerror = options.onError;
+            }
+            
+            if (options.onLoad) {
+                img.onload = options.onLoad;
+            }
+            
+            container.appendChild(img);
+            return container;
+        }
+
+        // Generar partículas flotantes con corazones
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 15;
+            const hearts = ['❤️', '💕', '✨', '💖'];
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.animationDuration = (12 + Math.random() * 8) + 's';
+                particle.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+                container.appendChild(particle);
+            }
+        }
+
+        // Efecto parallax suave
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const offset = window.pageYOffset;
+            if (hero) {
+                hero.style.backgroundPosition = `0 ${offset * 0.5}px`;
+            }
+
+            // Efecto reveal en elementos
+            const elements = document.querySelectorAll('.category-card, .product-card, .feature, .benefit-card');
+            elements.forEach(elem => {
+                const rect = elem.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight * 0.75;
+                if (isVisible) {
+                    elem.style.opacity = '1';
+                    elem.style.transform = elem.style.transform || '';
+                }
+            });
+        });
+
+        // Inicializar
+        createParticles();
+
+        // Efecto suave en botones
+        document.querySelectorAll('.btn, .product-button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+
+            // Efecto ripple al hacer hover
+            btn.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                this.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.5), transparent)`;
+            });
+
+            btn.addEventListener('mouseleave', function() {
+                this.style.background = '';
+            });
+        });
+
+        // Agregar efecto hover suave a los elementos
+        document.querySelectorAll('.category-card, .feature, .benefit-card').forEach(elem => {
+            elem.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            });
+        });
+
+        // Efecto de rotación suave al pasar por el logo
+        const logo = document.querySelector('.logo');
+        if (logo) {
+            logo.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.1) rotate(5deg)';
+            });
+            logo.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+            logo.style.transition = 'all 0.3s ease';
+        }
+
+        // Tema oscuro: persistencia y toggle
+        (function() {
+            const toggle = document.getElementById('theme-toggle');
+            const root = document.documentElement;
+            function setDark(isDark) {
+                if (isDark) {
+                    document.body.classList.add('dark');
+                    if (toggle) toggle.textContent = '☀️';
+                    localStorage.setItem('almajo-theme', 'dark');
+                } else {
+                    document.body.classList.remove('dark');
+                    if (toggle) toggle.textContent = '🌙';
+                    localStorage.setItem('almajo-theme', 'light');
+                }
+            }
+
+            // Initialize from storage or prefers-color-scheme
+            const saved = localStorage.getItem('almajo-theme');
+            if (saved === 'dark') setDark(true);
+            else if (saved === 'light') setDark(false);
+            else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) setDark(true);
+
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    const isDark = document.body.classList.contains('dark');
+                    setDark(!isDark);
+                });
+            }
+        })();
+    </script>
+
+</body>
+</html>

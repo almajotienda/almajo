@@ -874,6 +874,73 @@
         .cart-item {
             animation: fadeIn 0.3s ease-out;
         }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-float i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .whatsapp-float::before {
+            content: '¡Contáctanos!';
+            position: absolute;
+            right: 70px;
+            background: white;
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(10px);
+            transition: var(--transition);
+        }
+        
+        .whatsapp-float:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 1.7rem;
+            }
+            
+            .whatsapp-float::before {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1010,24 +1077,25 @@
                                 <div class="summary-totals">
                                     <div class="summary-item">
                                         <p>Compras:</p>
-                                        <span id="subtotal-purchase">€0.00</span>
+                                        <span id="subtotal-purchase">$U0</span>
                                     </div>
                                     <div class="summary-item">
                                         <p>Alquileres (por día):</p>
-                                        <span id="subtotal-rental">€0.00</span>
+                                        <span id="subtotal-rental">$U0</span>
                                     </div>
                                 </div>
                                 
                                 <div class="summary-total">
                                     <div class="total-row">
                                         <span>Total:</span>
-                                        <span id="cart-total" class="total-amount">€0.00</span>
+                                        <span id="cart-total" class="total-amount">$U0</span>
                                     </div>
-                                    <p class="rental-note">* Precio de alquileres calculado por día</p>
+                                    <p class="rental-note">* Serás redirigido a nuestra pasarela de pago segura</p>
                                 </div>
                                 
-                                <button class="btn-checkout" onclick="handleCheckout()">
-                                    Finalizar Pedido ✨
+                                <button class="btn-checkout" onclick="window.location.href='checkout.html'">
+                                    <i class="fas fa-credit-card" style="margin-right: 8px;"></i>
+                                    Proceder al Pago
                                 </button>
                                 
                                 <a href="compra.html" class="btn-continue">
@@ -1043,6 +1111,11 @@
 
     <!-- Toast Notification -->
     <div id="toast-container"></div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/59899493671" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="cart.js"></script>
     <script>

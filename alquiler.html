@@ -1023,6 +1023,73 @@
                 padding: 20px;
             }
         }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-float i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .whatsapp-float::before {
+            content: '¡Contáctanos!';
+            position: absolute;
+            right: 70px;
+            background: white;
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(10px);
+            transition: var(--transition);
+        }
+        
+        .whatsapp-float:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 1.7rem;
+            }
+            
+            .whatsapp-float::before {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1186,6 +1253,7 @@
                 <h2>Almajo</h2>
                 <p>Tu destino para moda de lujo y alquiler de prendas exclusivas. Made for you, styled by you.</p>
                 <div class="social-links">
+                    <a href="https://wa.me/59899493671" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1225,18 +1293,23 @@
         </div>
     </footer>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/59899493671" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="cart.js"></script>
     <script>
-        // Rental products data
+        // Rental products data (precios en pesos uruguayos $U)
         const rentalProducts = [
-            { id: 'rental-1', name: 'Vestido de Novia Premium', category: 'vestidos', price: 280, oldPrice: 350, image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&h=500&fit=crop', sizes: ['XS', 'S', 'M', 'L'] },
-            { id: 'rental-2', name: 'Vestido Cocktail Rojo', category: 'vestidos', price: 108, oldPrice: 150, image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=400&h=500&fit=crop', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
-            { id: 'rental-3', name: 'Smoking Elegante', category: 'trajes', price: 160, oldPrice: 220, image: 'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=400&h=500&fit=crop', sizes: ['S', 'M', 'L', 'XL'] },
-            { id: 'rental-4', name: 'Vestido de Gala Largo', category: 'vestidos', price: 162, oldPrice: 220, image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop', sizes: ['XS', 'S', 'M', 'L'] },
-            { id: 'rental-5', name: 'Vestido Fiesta Brillante', category: 'vestidos', price: 120, oldPrice: 180, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=500&fit=crop', sizes: ['XS', 'S', 'M', 'L'] },
-            { id: 'rental-6', name: 'Traje Formal Navy', category: 'trajes', price: 225, oldPrice: 300, image: 'https://images.unsplash.com/photo-1603252109303-2751441dd157?w=400&h=500&fit=crop', sizes: ['S', 'M', 'L', 'XL'] },
-            { id: 'rental-7', name: 'Falda Larga Plisada', category: 'faldas', price: 65, oldPrice: 90, image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0uj0b?w=400&h=500&fit=crop', sizes: ['S', 'M', 'L'] },
-            { id: 'rental-8', name: 'Abrigo Elegante', category: 'trajes', price: 145, oldPrice: 200, image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=500&fit=crop', sizes: ['S', 'M', 'L', 'XL'] },
+            { id: 'rental-1', name: 'Vestido de Novia Premium', category: 'vestidos', price: 12600, oldPrice: 15800, image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&h=500&fit=crop', sizes: ['XS', 'S', 'M', 'L'] },
+            { id: 'rental-2', name: 'Vestido Cocktail Rojo', category: 'vestidos', price: 4900, oldPrice: 6800, image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=400&h=500&fit=crop', sizes: ['XS', 'S', 'M', 'L', 'XL'] },
+            { id: 'rental-3', name: 'Smoking Elegante', category: 'trajes', price: 7200, oldPrice: 9900, image: 'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=400&h=500&fit=crop', sizes: ['S', 'M', 'L', 'XL'] },
+            { id: 'rental-4', name: 'Vestido de Gala Largo', category: 'vestidos', price: 7300, oldPrice: 9900, image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop', sizes: ['XS', 'S', 'M', 'L'] },
+            { id: 'rental-5', name: 'Vestido Fiesta Brillante', category: 'vestidos', price: 5400, oldPrice: 8100, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=500&fit=crop', sizes: ['XS', 'S', 'M', 'L'] },
+            { id: 'rental-6', name: 'Traje Formal Navy', category: 'trajes', price: 10100, oldPrice: 13500, image: 'https://images.unsplash.com/photo-1603252109303-2751441dd157?w=400&h=500&fit=crop', sizes: ['S', 'M', 'L', 'XL'] },
+            { id: 'rental-7', name: 'Falda Larga Plisada', category: 'faldas', price: 2900, oldPrice: 4100, image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0uj0b?w=400&h=500&fit=crop', sizes: ['S', 'M', 'L'] },
+            { id: 'rental-8', name: 'Abrigo Elegante', category: 'trajes', price: 6500, oldPrice: 9000, image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=500&fit=crop', sizes: ['S', 'M', 'L', 'XL'] },
         ];
         
         // Current state
@@ -1322,8 +1395,8 @@
                             <p>Categoría: ${product.category}</p>
                             <div class="rental-product-price">
                                 <div class="price-info">
-                                    ${hasDiscount ? `<span class="price-old">€${product.oldPrice}</span>` : ''}
-                                    <span class="price-current">€${currentPrice}</span>
+                                    ${hasDiscount ? `<span class="price-old">$U${product.oldPrice.toLocaleString('es-UY')}</span>` : ''}
+                                    <span class="price-current">$U${currentPrice.toLocaleString('es-UY')}</span>
                                     <span class="price-days">/día</span>
                                 </div>
                             </div>

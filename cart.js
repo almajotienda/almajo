@@ -20,18 +20,18 @@ function saveCart() {
 
 // Product data (simplified)
 const products = {
-    'product-1': { name: 'Vestido Elegante Noir', salePrice: 89.99, image: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=200&h=200&fit=crop' },
-    'product-2': { name: 'Camisa Slim', salePrice: 45.00, image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=200&h=200&fit=crop' },
-    'product-3': { name: 'Abrigo Wool', salePrice: 120.00, image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=200&h=200&fit=crop' },
-    'product-5': { name: 'Vestido Floral', salePrice: 65.00, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200&h=200&fit=crop' },
-    'product-6': { name: 'Falda Plisada', salePrice: 55.00, image: 'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=200&h=200&fit=crop' },
-    'product-7': { name: 'Vestido Premium Rosa', salePrice: 145.00, image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=200&h=200&fit=crop' },
-    'rental-1': { name: 'Vestido de Novia Premium', rentalPrice: 280, image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=200&h=200&fit=crop' },
-    'rental-2': { name: 'Vestido Cocktail Rojo', rentalPrice: 108, image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=200&h=200&fit=crop' },
-    'rental-3': { name: 'Smoking Elegante', rentalPrice: 160, image: 'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=200&h=200&fit=crop' },
-    'rental-4': { name: 'Vestido de Gala Largo', rentalPrice: 162, image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=200&h=200&fit=crop' },
-    'rental-5': { name: 'Vestido Fiesta Brillante', rentalPrice: 120, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200&h=200&fit=crop' },
-    'rental-6': { name: 'Traje Formal Navy', rentalPrice: 225, image: 'https://images.unsplash.com/photo-1603252109303-2751441dd157?w=200&h=200&fit=crop' },
+    'product-1': { name: 'Vestido Elegante Noir', salePrice: 3900, image: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
+    'product-2': { name: 'Camisa Slim', salePrice: 1950, image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
+    'product-3': { name: 'Abrigo Wool', salePrice: 5200, image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
+    'product-5': { name: 'Vestido Floral', salePrice: 2800, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
+    'product-6': { name: 'Falda Plisada', salePrice: 2400, image: 'https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
+    'product-7': { name: 'Vestido Premium Rosa', salePrice: 6300, image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=200&h=200&fit=crop', mercadopago: 'https://mpago.la/2SWn8Xc' },
+    'rental-1': { name: 'Vestido de Novia Premium', rentalPrice: 12000, image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
+    'rental-2': { name: 'Vestido Cocktail Rojo', rentalPrice: 4700, image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
+    'rental-3': { name: 'Smoking Elegante', rentalPrice: 6900, image: 'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
+    'rental-4': { name: 'Vestido de Gala Largo', rentalPrice: 7000, image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
+    'rental-5': { name: 'Vestido Fiesta Brillante', rentalPrice: 5200, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
+    'rental-6': { name: 'Traje Formal Navy', rentalPrice: 9700, image: 'https://images.unsplash.com/photo-1603252109303-2751441dd157?w=200&h=200&fit=crop', mercadopago: 'https://link.mercadopago.com.uy/ntecservicio' },
 };
 
 // Initialize on load
@@ -182,7 +182,7 @@ function renderCart() {
             const itemTotal = (item.price || 0) * item.quantity;
             purchaseTotal += itemTotal;
             
-            purchaseHTML += `<div class="cart-item-improved"><div class="cart-item-image-improved"><img src="${item.image || 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=200&h=200&fit=crop'}" alt="${item.name}"></div><div class="cart-item-details-improved"><h3>${item.name}</h3><p class="cart-item-meta-improved">Talla: <span>${item.size || 'M'}</span></p><p class="cart-item-price-improved">€${(item.price || 0).toFixed(2)} und.</p></div><div class="cart-item-quantity-improved"><button onclick="updateQuantity('${item.productId}', 'compra', ${item.quantity - 1})" class="qty-btn"><i class="fas fa-minus"></i></button><span>${item.quantity}</span><button onclick="updateQuantity('${item.productId}', 'compra', ${item.quantity + 1})" class="qty-btn"><i class="fas fa-plus"></i></button></div><div class="cart-item-total"><span>€${itemTotal.toFixed(2)}</span></div><button class="cart-item-remove-improved" onclick="removeFromCart('${item.productId}', 'compra')"><i class="fas fa-times"></i></button></div>`;
+            purchaseHTML += `<div class="cart-item-improved"><div class="cart-item-image-improved"><img src="${item.image || 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=200&h=200&fit=crop'}" alt="${item.name}"></div><div class="cart-item-details-improved"><h3>${item.name}</h3><p class="cart-item-meta-improved">Talla: <span>${item.size || 'M'}</span></p><p class="cart-item-price-improved">$U${(item.price || 0).toLocaleString('es-UY')} und.</p></div><div class="cart-item-quantity-improved"><button onclick="updateQuantity('${item.productId}', 'compra', ${item.quantity - 1})" class="qty-btn"><i class="fas fa-minus"></i></button><span>${item.quantity}</span><button onclick="updateQuantity('${item.productId}', 'compra', ${item.quantity + 1})" class="qty-btn"><i class="fas fa-plus"></i></button></div><div class="cart-item-total"><span>$U${itemTotal.toLocaleString('es-UY')}</span></div><button class="cart-item-remove-improved" onclick="removeFromCart('${item.productId}', 'compra')"><i class="fas fa-times"></i></button></div>`;
         });
     }
     purchaseItems.innerHTML = purchaseHTML;
@@ -198,26 +198,68 @@ function renderCart() {
             const itemTotal = (item.price || 0) * (item.days || 1) * item.quantity;
             rentalTotal += itemTotal;
             
-            rentalHTML += `<div class="cart-item-improved rental-item"><div class="cart-item-image-improved"><img src="${item.image || 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=200&h=200&fit=crop'}" alt="${item.name}"></div><div class="cart-item-details-improved"><h3>${item.name}</h3><p class="cart-item-meta-improved">Talla: <span>${item.size || 'M'}</span> • <span>${item.days || 1} dia(s)</span></p><p class="cart-item-price-improved">€${(item.price || 0).toFixed(2)}/dia</p></div><div class="cart-item-quantity-improved"><button onclick="updateQuantity('${item.productId}', 'alquiler', ${item.quantity - 1})" class="qty-btn"><i class="fas fa-minus"></i></button><span>${item.quantity}</span><button onclick="updateQuantity('${item.productId}', 'alquiler', ${item.quantity + 1})" class="qty-btn"><i class="fas fa-plus"></i></button></div><div class="cart-item-total"><span>€${itemTotal.toFixed(2)}</span></div><button class="cart-item-remove-improved" onclick="removeFromCart('${item.productId}', 'alquiler')"><i class="fas fa-times"></i></button></div>`;
+            rentalHTML += `<div class="cart-item-improved rental-item"><div class="cart-item-image-improved"><img src="${item.image || 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=200&h=200&fit=crop'}" alt="${item.name}"></div><div class="cart-item-details-improved"><h3>${item.name}</h3><p class="cart-item-meta-improved">Talla: <span>${item.size || 'M'}</span> • <span>${item.days || 1} dia(s)</span></p><p class="cart-item-price-improved">$U${(item.price || 0).toLocaleString('es-UY')}/dia</p></div><div class="cart-item-quantity-improved"><button onclick="updateQuantity('${item.productId}', 'alquiler', ${item.quantity - 1})" class="qty-btn"><i class="fas fa-minus"></i></button><span>${item.quantity}</span><button onclick="updateQuantity('${item.productId}', 'alquiler', ${item.quantity + 1})" class="qty-btn"><i class="fas fa-plus"></i></button></div><div class="cart-item-total"><span>$U${itemTotal.toLocaleString('es-UY')}</span></div><button class="cart-item-remove-improved" onclick="removeFromCart('${item.productId}', 'alquiler')"><i class="fas fa-times"></i></button></div>`;
         });
     }
     rentalItems.innerHTML = rentalHTML;
 
     // Update totals
     const totals = getTotals();
-    subtotalPurchase.textContent = '€' + purchaseTotal.toFixed(2);
-    subtotalRental.textContent = '€' + rentalTotal.toFixed(2);
-    cartTotal.textContent = '€' + totals.total.toFixed(2);
+    subtotalPurchase.textContent = '$U' + purchaseTotal.toLocaleString('es-UY');
+    subtotalRental.textContent = '$U' + rentalTotal.toLocaleString('es-UY');
+    cartTotal.textContent = '$U' + totals.total.toLocaleString('es-UY');
 }
 
-// Handle checkout
+// Handle checkout - Redirects to checkout page
 function handleCheckout() {
     if (cart.length === 0) {
         showToast('Tu carrito está vacío');
         return;
     }
-    showToast('¡Pedido realizado con éxito! Gracias por tu compra 💕✨');
-    clearCart();
+    
+    // Redirect to checkout page
+    window.location.href = 'checkout.html';
+}
+
+// Generate WhatsApp message for order
+function generateWhatsAppMessage() {
+    let message = '¡Hola Almajo! 👋\n\n';
+    message += 'Quiero realizar el siguiente pedido:\n\n';
+    
+    // Add purchase items
+    const purchaseItems = cart.filter(item => item.type === 'compra');
+    if (purchaseItems.length > 0) {
+        message += '🛒 *COMPRAS:*\n';
+        purchaseItems.forEach((item, index) => {
+            message += `${index + 1}. ${item.name}\n`;
+            message += `   • Talla: ${item.size || 'M'}\n`;
+            message += `   • Cantidad: ${item.quantity}\n`;
+            message += `   • Precio: $U${(item.price || 0).toLocaleString('es-UY')} c/u\n`;
+            message += `   • Subtotal: $U${((item.price || 0) * item.quantity).toLocaleString('es-UY')}\n\n`;
+        });
+    }
+    
+    // Add rental items
+    const rentalItems = cart.filter(item => item.type === 'alquiler');
+    if (rentalItems.length > 0) {
+        message += '👗 *ALQUILERES:*\n';
+        rentalItems.forEach((item, index) => {
+            message += `${index + 1}. ${item.name}\n`;
+            message += `   • Talla: ${item.size || 'M'}\n`;
+            message += `   • Días: ${item.days || 1}\n`;
+            message += `   • Cantidad: ${item.quantity}\n`;
+            message += `   • Precio: $U${(item.price || 0).toLocaleString('es-UY')}/día\n`;
+            message += `   • Subtotal: $U${((item.price || 0) * (item.days || 1) * item.quantity).toLocaleString('es-UY')}\n\n`;
+        });
+    }
+    
+    // Add total
+    const totals = getTotals();
+    message += '─────────────────\n';
+    message += `💰 *TOTAL: $U${totals.total.toLocaleString('es-UY')}*\n\n`;
+    message += '¡Gracias! Quedo a la espera de su respuesta 💕✨';
+    
+    return message;
 }
 
 // Toast notification

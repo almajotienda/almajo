@@ -1125,6 +1125,73 @@
                 justify-content: center;
             }
         }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-float i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .whatsapp-float::before {
+            content: '¡Contáctanos!';
+            position: absolute;
+            right: 70px;
+            background: white;
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(10px);
+            transition: var(--transition);
+        }
+        
+        .whatsapp-float:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 1.7rem;
+            }
+            
+            .whatsapp-float::before {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1230,8 +1297,8 @@
                                     <h3>Vestido Elegante Noir</h3>
                                     <p>Diseño exclusivo para ocasiones especiales</p>
                                     <div class="product-price-row">
-                                        <span class="price-large">€89.99</span>
-                                        <button class="btn-view" onclick="addToCart('product-1', 'compra', 'M', 89.99)">Añadir</button>
+                                        <span class="price-large">$U4.000</span>
+                                        <button class="btn-view" onclick="addToCart('product-1', 'compra', 'M', 4000)">Añadir</button>
                                     </div>
                                 </div>
                             </div>
@@ -1255,7 +1322,7 @@
                                 <div class="product-overlay-small">
                                     <div class="product-info-small">
                                         <h3>Camisa Slim</h3>
-                                        <span>€45.00</span>
+                                        <span>$U2.000</span>
                                     </div>
                                 </div>
                             </div>
@@ -1271,7 +1338,7 @@
                                 <div class="product-overlay-small">
                                     <div class="product-info-small">
                                         <h3>Abrigo Wool</h3>
-                                        <span>€120.00</span>
+                                        <span>$U5.400</span>
                                     </div>
                                 </div>
                             </div>
@@ -1290,7 +1357,7 @@
                             <div class="product-overlay-small">
                                 <div class="product-info-small">
                                     <h3>Vestido Floral</h3>
-                                    <span>€65.00</span>
+                                    <span>$U2.900</span>
                                 </div>
                             </div>
                         </div>
@@ -1307,7 +1374,7 @@
                             <div class="product-overlay-small">
                                 <div class="product-info-small">
                                     <h3>Falda Plisada</h3>
-                                    <span>€55.00</span>
+                                    <span>$U2.500</span>
                                 </div>
                             </div>
                         </div>
@@ -1329,8 +1396,8 @@
                                     <h3>Vestido Premium Rosa</h3>
                                     <p>Elegancia y sofisticación</p>
                                     <div class="product-price-row">
-                                        <span class="price-large">€145.00</span>
-                                        <button class="btn-view" onclick="addToCart('product-7', 'compra', 'M', 145)">Añadir</button>
+                                        <span class="price-large">$U6.300</span>
+                                        <button class="btn-view" onclick="addToCart('product-7', 'compra', 'M', 6300)">Añadir</button>
                                     </div>
                                 </div>
                             </div>
@@ -1387,6 +1454,7 @@
                 <h2>Almajo</h2>
                 <p>Tu destino para moda exclusiva y alquiler de prendas para eventos especiales.</p>
                 <div class="social-links">
+                    <a href="https://wa.me/59899493671" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-pinterest-p"></i></a>
@@ -1425,6 +1493,11 @@
             <p>&copy; 2024 Almajo. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/59899493671" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="cart.js"></script>
     <script>
